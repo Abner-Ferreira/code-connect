@@ -8,9 +8,17 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.29"
+    "@prisma/client": "^6.8.2",
+    "next": "15.3.2",
+    "prisma": "^6.8.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
+    "winston": "^3.17.0"
   }
 }
