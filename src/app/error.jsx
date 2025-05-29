@@ -20,7 +20,7 @@ export default function Error({
 
   return (
     <div className={style.container}>
-      <Image src={banner}/>
+      <Image src={banner} alt='Imagem de erro'/>
       <Heading>Opa! Ocorreu um erro.</Heading>
       <p className={style.text}>Não conseguimos carregar a página, volte para seguir navegando.</p>
       <Link href="/">

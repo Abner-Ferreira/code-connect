@@ -11,7 +11,7 @@ async function getAllPosts(page, searchTerm) {
     if (searchTerm) {
       where.title = {
         contains: searchTerm,
-        mode: 'insensitive'
+        mode: 'insensitive',
       }
     }
 
@@ -27,10 +27,11 @@ async function getAllPosts(page, searchTerm) {
       skip,
       where,
       orderBy: {
-        createdAt: 'desc',
+        id: 'desc',
       },
       include: {
         author: true,
+        comments: true,
       },
     })
 
@@ -42,8 +43,9 @@ async function getAllPosts(page, searchTerm) {
 }
 
 export default async function Home({ searchParams }) {
-  const currentPage = parseInt(searchParams?.page || 1)
-  const searchTerm = searchParams?.q
+  const { page, q } = await searchParams
+  const currentPage = parseInt( page || 1)
+  const searchTerm = q
   const { data: posts, prev, next } = await getAllPosts(currentPage, searchTerm)
   return (
     <main className={styles.grid}>

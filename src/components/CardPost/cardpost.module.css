@@ -45,6 +45,23 @@
     flex-grow: 1;
 }
 
+.body a {
+    color: #81FE88;
+}
+
+.actions {
+    display: flex;
+}
+
 .footer {
     padding: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer p{
+    margin: 0;
+    color: #888;
+    font-size: 15px;
+    text-align: center;
 }
